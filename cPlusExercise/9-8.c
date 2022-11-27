@@ -39,7 +39,7 @@ double power(double n, int p) {
   else if (p == 0){
     return 1;
   }
-  else if (n == 0) {
+  else if (n == 0) { 
     return 0;
   }
   else {

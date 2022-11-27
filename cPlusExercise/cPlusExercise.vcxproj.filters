@@ -42,9 +42,6 @@
     <ClCompile Include="play.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="play7.c">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="play1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -70,10 +67,19 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="9-8.c">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="9-9.c">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="play7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="9-10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="9-11.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
