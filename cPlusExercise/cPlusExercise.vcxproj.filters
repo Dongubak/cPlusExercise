@@ -81,5 +81,23 @@
     <ClCompile Include="9-11.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="10-1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

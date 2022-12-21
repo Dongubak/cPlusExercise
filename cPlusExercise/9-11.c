@@ -1,7 +1,7 @@
 #include <stdio.h>
 #pragma warning(disable: 4996)
 
-int main(void) {
+int main9_11(void) {
   /*0 1 1 2 3 5 8 */
   int i, k, j, cur, tmp;
   cur = 1;
