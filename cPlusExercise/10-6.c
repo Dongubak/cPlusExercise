@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void) {
+int main10_6(void) {
 
   int arr[5] = {
     1, 2, 3, 4, 5

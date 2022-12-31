@@ -99,5 +99,85 @@
     <ClCompile Include="10-6.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="10-7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-11.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10-14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-11.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-15.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="11-16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="11-1.ㅊ" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="custom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
