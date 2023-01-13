@@ -1,31 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int get_biggest_index(const double*, const double*);
+
 int main10_4(void) {
-  ///가장 큰 값을 구하는 알고리즘의 시간복잡도는 O(n) 즉 모든 원소를 따져야 함
   double numbers[10];
   int iter; 
-  double upper_double;
-  int upper_index = 0;
-  ///upper_index is the index of the most biggest number.
+  
+  for (iter = 0; iter < sizeof(numbers) / sizeof(double); iter++)
+    printf("numbers[%d] : %.1lf\n", iter, numbers[iter] = rand() * 0.1);
 
-  for (iter = 0; iter < sizeof(numbers) / sizeof(double); iter++) {
-    numbers[iter] = rand() * 0.1;
-  }
-
-  upper_double = numbers[0];
-  for (iter = 0; iter < sizeof(numbers) / sizeof(double); iter++) {
-    printf("numbers[%d] : %.1f\n", iter, numbers[iter]);
-    upper_double = numbers[iter] >= upper_double ? numbers[iter] : upper_double;
-  }
-  printf("Most biggest number is %.1f\n", upper_double);
-  for (iter = 0; iter < sizeof(numbers) / sizeof(double); iter++) {
-    if (numbers[iter] == upper_double) {
-      printf("the index of the most biggest number : %d\n", upper_index);
-      break;
-    }
-    upper_index++;
-  }
+  printf("the index of the most biggest number : %d\n", get_biggest_index(numbers, numbers + sizeof(numbers) / sizeof(double)));
 
   return 0;
+}
+
+int get_biggest_index(const double*pt, const double*end_pointer)
+{
+  const double* const st_pt = pt;
+  double upper_double = *pt;
+  int upper_index = 0;///upper_index is the index of the most biggest number.
+
+  do {
+    if (*pt > upper_double) {
+      upper_double = *pt;
+      upper_index = pt - st_pt;
+    }
+  } while (++pt < end_pointer);
+
+  return upper_index;
 }

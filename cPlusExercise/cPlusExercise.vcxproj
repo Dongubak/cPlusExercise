@@ -157,6 +157,17 @@
     <ClCompile Include="11-7.c" />
     <ClCompile Include="11-8.c" />
     <ClCompile Include="11-9.c" />
+    <ClCompile Include="12-1.c" />
+    <ClCompile Include="12-2.c" />
+    <ClCompile Include="12-2a.c" />
+    <ClCompile Include="12-3.c" />
+    <ClCompile Include="12-3a.c" />
+    <ClCompile Include="12-4.c" />
+    <ClCompile Include="12-5.c" />
+    <ClCompile Include="12-6.c" />
+    <ClCompile Include="12-7.c" />
+    <ClCompile Include="12-7diceroll.c" />
+    <ClCompile Include="13-1.c" />
     <ClCompile Include="8-1.c" />
     <ClCompile Include="8-2.c" />
     <ClCompile Include="8-3.c" />
@@ -177,14 +188,16 @@
     <ClCompile Include="9-8.c" />
     <ClCompile Include="9-9.c" />
     <ClCompile Include="play.c" />
-    <ClCompile Include="play1.c" />
-    <ClCompile Include="play7.c" />
+    <ClCompile Include="rand0.c" />
+    <ClCompile Include="random_dice.c" />
+    <ClCompile Include="random_dice_driver.c" />
+    <ClCompile Include="r_driver0.c" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="11-1.ㅊ" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="12-2a.h" />
+    <ClInclude Include="12-3a.h" />
     <ClInclude Include="custom.h" />
+    <ClInclude Include="diceroll.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

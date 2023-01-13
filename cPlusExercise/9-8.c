@@ -30,7 +30,7 @@ int main9_8(void) {
 
 double power(double n, int p) {
   double pow = 1;
-  int absP = p < 0 ? -p : p;
+  int absP = p < 0 ? -p : p; ///p의 절댓값 -> 루프 실행 횟수
   int i;
 
   if (n == 0 && p == 0) {
@@ -44,7 +44,7 @@ double power(double n, int p) {
   }
   else {
     for (i = 1; i <= absP; i++) {
-      pow *= p < 0 ? 1. / n : n;
+      pow *= p < 0 ? 1. / n : n;///실제 p의 부호를 조사하여 역수취함
     }
   }
 

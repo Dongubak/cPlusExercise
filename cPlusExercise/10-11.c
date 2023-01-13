@@ -17,19 +17,20 @@ int main10_11(void) {
   return 0;
 }
 
-void display_arr1(int r, int(*pt)[5]) {
+void display_arr1(int row, int(*pt)[5]) {
   int outer_iter, inner_iter;
-  for (outer_iter = 0; outer_iter < 3; outer_iter++) {
-    for (inner_iter = 0; inner_iter < r; inner_iter++) {
-      printf("arr[%d][%d] : %d\n", outer_iter, inner_iter, *(*(pt + outer_iter) + inner_iter));
+  for (inner_iter= 0; inner_iter < row; inner_iter++) {
+    for (outer_iter = 0; outer_iter < 3; outer_iter++) {
+      printf("arr[%d][%d] : %3d    ", outer_iter, inner_iter, *(*(pt + outer_iter) + inner_iter));
     }
+    printf("\n");
   }
 }
 
-void mul_arr1(int r, int(*pt)[5]) {
+void mul_arr1(int row, int(*pt)[5]) {
   int outer_iter, inner_iter;
   for (outer_iter = 0; outer_iter < 3; outer_iter++) {
-    for (inner_iter = 0; inner_iter < r; inner_iter++) {
+    for (inner_iter = 0; inner_iter < row; inner_iter++) {
       *(*(pt + outer_iter) + inner_iter) = *(*(pt + outer_iter) + inner_iter) * 2;
     }
   }

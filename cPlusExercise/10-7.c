@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void copy_ptr3(double[], double[], int);
+void copy_ptr3(double[], const double[], int);
 
 int main10_7(void) {
   double arr[2][2] = {
@@ -24,10 +24,9 @@ int main10_7(void) {
   return 0;
 }
 
-void copy_ptr3(double target_array[], double source_array[], int element_count) {
+void copy_ptr3(double target_array[], const double source_array[], int element_count) {
   int iter;
   for (iter = 0; iter < element_count; iter++) {
     *(target_array + iter) = *(source_array + iter);
   }
-  return 0;
 }

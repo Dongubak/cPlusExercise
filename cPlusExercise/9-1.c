@@ -1,10 +1,9 @@
 #include <stdio.h>
 #pragma warning(disable: 4996)
 
-//두개의 정수를 인수로 받고
-//두개의 정수중 작은 정수를 반환하는 함수
-//같다면 그 값을 반환한다.
-double min(double x, double y);
+//first_input과 second_input을 비교하여
+//둘 중 작은 값을 반환하는 함수
+double min(double first_input, double second_input);
 
 int main9_1(void) {
   double first_value = 2.1;
@@ -15,12 +14,17 @@ int main9_1(void) {
   return 0;
 }
 
-double min(double x, double y) {
+double min(double first_input, double second_input) {
   double min_value;
-  if (x > y) {
-    min_value = y;
+  if (first_input > second_input) {///first_input 이 second_input보다 큰 경우 second_input 반환
+    min_value = second_input;
   }
-  else if(y > x){
-    min_value = x;
+  else if(second_input > first_input){///second_input 이 first_input보다 큰 경우 first_input 반환
+    min_value = first_input;
   }
+  else {
+    min_value = first_input;
+    printf("입력한 두 값이 같습니다\n");
+  }
+  return min_value;
 }

@@ -11,5 +11,5 @@ int main9_4(void) {
 }
 
 double getHarmonicMean(double firstValue, double secondValue) {
-  return (2 * firstValue * secondValue) / (firstValue + secondValue);
+  return (firstValue + secondValue == 0) ? 0 : (2 * firstValue * secondValue) / (firstValue + secondValue);
 }

@@ -16,7 +16,7 @@ int main9_6(void) {
 
 void sortValues(double* pointerOfX, double* pointerOfY, double* pointerOfZ) {
   double tmp;
-  while (!(*pointerOfX < *pointerOfY && *pointerOfY < *pointerOfZ)) {
+  while (!(*pointerOfX < *pointerOfY && *pointerOfY < *pointerOfZ)) {///sort될 때까지 while loop
     if (*pointerOfX > *pointerOfY) {
       tmp = *pointerOfY;
       *pointerOfY = *pointerOfX;

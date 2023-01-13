@@ -1,6 +1,6 @@
 #include <stdio.h>
 ///세개의 배열이름과 하나의 배열 크기를 전달인자로 전달 받음
-void merge_arr(int*, int*, int*, int);
+void merge_arr(const int*, const int*, int*, int);
 void display_arr(int*, int);
 
 int main10_10(void) {
@@ -14,10 +14,10 @@ int main10_10(void) {
   return 0;
 }
 
-void merge_arr(int*pt1, int*pt2, int*pt3, int element_count) {
+void merge_arr(const int*first_source, const int*second_source, int*pt, int element_count) {
   int iter;
   for (iter = 0; iter < element_count; iter++) {
-    *(pt3 + iter) = *(pt1 + iter) + *(pt2 + iter);
+    *(pt + iter) = *(first_source + iter) + *(second_source + iter);
   }
 }
 

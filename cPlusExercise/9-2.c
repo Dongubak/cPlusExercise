@@ -20,10 +20,10 @@ int main9_2(void) {
 
 void chline(char input_char, int first_column, int second_column) {
   int iter;
-  for (iter = 1; iter < first_column; iter++) {
-    printf(" ");
-  }
-  for (iter = first_column; iter <= second_column; iter++) {
+  ///first_column => width
+  printf("%*c", first_column, input_char);
+
+  for (iter = first_column; iter < second_column; iter++) {
     printf("%c", input_char);
   }
 }

@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 void copy_arr(double[], double[], int);
-void copy_ptr(double[], double[], int);
+void copy_ptr(double*, double*, int);
 void copy_ptr2(double[], double[], double[]);
 void display_array(double[], int, int);
 int main10_2(void) {
-  double source[5] = {
+  const double source[5] = {
     1.1, 2.2, 3.3, 4.4, 5.5
   };
 
@@ -24,7 +24,7 @@ int main10_2(void) {
   return 0;
 }
 
-void copy_arr(double target_array[], double source_array[], int element_count) {
+void copy_arr(double target_array[], const double source_array[], int element_count) {
   int iter;
   for (iter = 0; iter < element_count; iter++) {
     target_array[iter] = source_array[iter];
@@ -32,7 +32,7 @@ void copy_arr(double target_array[], double source_array[], int element_count) {
   return 0;
 }
 
-void copy_ptr(double target_array[], double source_array[], int element_count) {
+void copy_ptr(double *target_array, const double *source_array, int element_count) {
   int iter;
   for (iter = 0; iter < element_count; iter++) {
     *(target_array + iter) = *(source_array + iter);
@@ -40,19 +40,19 @@ void copy_ptr(double target_array[], double source_array[], int element_count) {
   return 0;
 }
 
-void copy_ptr2(double target_array[], double source_array[], double source_array_last_element_pointer[]) {
+void copy_ptr2(double target_array[], const double source_array[], const double source_array_last_element_pointer[]) {
   double* iter;
   for (iter = source_array; iter <= source_array_last_element_pointer; iter++) {
     *(target_array++) = *iter;
   }
 }
 
-void display_array(double target1_pointer[], int array_count, int element_count) {
+void display_array(const double target1_pointer[], int array_count, int element_count) {
   int outer_iter, inner_iter;
-  for (outer_iter = 0; outer_iter < array_count; outer_iter++) {
-    printf("-----target%d-----\n", outer_iter + 1);
-    for (inner_iter = 0; inner_iter < element_count; inner_iter++) {
-      printf("target%d[%d] : %.1f\n", outer_iter + 1, inner_iter, *(target1_pointer + (outer_iter * 8) + inner_iter));
+  for (inner_iter = 0; inner_iter < element_count; inner_iter++) {
+    for (outer_iter = 0; outer_iter< array_count; outer_iter++) {
+      printf("target%d[%d] : %3.1f  ", outer_iter + 1, inner_iter, *(target1_pointer + (outer_iter * 8) + inner_iter));
     }
+    printf("\n");
   }
 }

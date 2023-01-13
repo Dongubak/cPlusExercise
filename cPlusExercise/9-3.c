@@ -5,32 +5,26 @@
 //두번째 인수로 열값을 받고
 //세번째 인수로 행값을 받고
 //열과 행에 대응되는 곳에 문자를 출력하는 함수
-void solution(char input_char, int column, int row);
+void input_char_in_matrix(char input_char, int column, int row);
 
 int main9_3(void) {
-  solution('a', 10, 2);
+  input_char_in_matrix('a', 8, 2);
 
   return 0;
 }
 
-void solution(char input_char, int column, int row) {
-  int iter_1, iter_2;
-  for (iter_1 = 1; iter_1 < row; iter_1++) {
-    for (iter_2 = 1; iter_2 <= (column + 3); iter_2++) {
-      printf(" - ");
-    }
-    printf("\n");
-  }
-
-  for (iter_1 = row; iter_1 <= (row + 3); iter_1++) {
-    for (iter_2 = 1; iter_2 <= (column + 3); iter_2++) {
-      if (iter_1 == row && iter_2 == column) {
-        printf(" %c ", input_char);
+void input_char_in_matrix(char input_char, int column, int row) {
+  int outer_iter, inner_iter;
+  
+  for (outer_iter = 0; outer_iter < 10; outer_iter++) {
+    for (inner_iter = 0; inner_iter < 10; inner_iter++) {
+      if (outer_iter == row && inner_iter == column) {
+        printf("  %c  ", input_char);
       }
       else {
-        printf(" - ");
+        printf("  -  ");
       }
     }
-    printf("\n");
+    printf("\n\n");
   }
 }

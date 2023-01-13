@@ -1,26 +1,28 @@
 #include <stdio.h>
 
-int main10_6(void) {
+void reverse_array(double*, double*);
 
-  int arr[5] = {
-    1, 2, 3, 4, 5
+int main10_6(void) {
+  int iter;
+  double arr[5] = {
+    1., 2., 3., 4., 5.
   };
 
-  int* end_pt, * start_pt;
-  start_pt = arr;
-  end_pt = arr + (sizeof(arr) / sizeof(int)) - 1;
+  reverse_array(arr, arr + sizeof(arr) / sizeof(double) - 1);
 
-  int iter;
-  for (iter = 0; iter <= sizeof(arr) / sizeof(int) / 2; iter++) {
-    int tmp;
-    tmp = *(end_pt - iter);
-    *(end_pt - iter) = *(start_pt + iter);
-    *(start_pt + iter) = tmp;
-  }
-
-  for (iter = 0; iter < sizeof(arr) / sizeof(int); iter++) {
-    printf("arr[%d] : %d\n", iter, arr[iter]);
+  for (iter = 0; iter < sizeof(arr) / sizeof(double); iter++) {
+    printf("arr[%d] : %.1lf\n", iter, arr[iter]);
   }
 
   return 0;
+}
+
+void reverse_array(double*pt, double*end_pt)
+{
+  do {
+    double tmp;
+    tmp = *end_pt;
+    *end_pt = *pt;
+    *pt = tmp;
+  } while (++pt < --end_pt);
 }

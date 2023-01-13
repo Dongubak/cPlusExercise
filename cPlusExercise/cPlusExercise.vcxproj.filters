@@ -42,9 +42,6 @@
     <ClCompile Include="play.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="play1.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="9-1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -70,9 +67,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="9-9.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="play7.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="9-10.c">
@@ -171,12 +165,63 @@
     <ClCompile Include="11-16.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="11-1.ㅊ" />
+    <ClCompile Include="12-1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rand0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="r_driver0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="random_dice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="random_dice_driver.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-2a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="13-1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-3a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-7diceroll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="12-7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="custom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="12-2a.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="12-3a.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diceroll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
