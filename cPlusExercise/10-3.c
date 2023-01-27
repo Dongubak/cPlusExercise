@@ -20,6 +20,8 @@ int main10_3(void) {
 int get_biggest_element(const int*pt, const int*pointer_end)
 {
   int upper_int = *pt;
+
+
   do {
     upper_int = *pt > upper_int ? *pt : upper_int;
   } while (++pt < pointer_end);

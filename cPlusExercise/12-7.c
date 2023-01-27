@@ -7,7 +7,7 @@
 /* and for roll_count  */
 #pragma warning(disable: 4996)
 
-int main(void)
+int main12_7(void)
 {
   int dice, roll;
   int sides;

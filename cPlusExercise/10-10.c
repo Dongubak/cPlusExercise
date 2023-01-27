@@ -7,7 +7,7 @@ int main10_10(void) {
   int arr1[4] = { 2, 4, 5, 8 };
   int arr2[4] = { 1, 0, 4, 6 };
   int arr3[4];
-
+  
   merge_arr(arr1, arr2, arr3, 4);
   display_arr(arr3, 4);
 
