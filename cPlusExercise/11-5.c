@@ -3,30 +3,34 @@
 
 //문자열 arr에서 find라는 문자 찾는 함수
 //리턴값 : find가 있는 경우 그 문자의 포인터, 없는 경우 null pointer
-char* sol5(char* arr, char find);
+char* c_find(char* arr, char find);
 
-int main11_5(void) {
+int main(void) {
 
-  char arr[] = "Picture perfect, you don't need no filter";
+  char *arr = "Picture perfect, you don't need no filter";
+  printf("주어진 문자열 : %s\n", arr);
+  printf("주어진 문자열의 첫 원소의 주소 : %p\n", arr);
+
   char chas[] = { 'a', 'b', 'c', 'd' };
   char* pt;
   int i;
 
   for (i = 0; i < 4; i++) {
-    if (pt = sol5(arr, chas[i])) {
-      printf("주어진 문자열 : %s, 대상 문자 : %c, 주어진 문자열의 첫 원소의 주소 : %zd, 대상 문자의 주어진 문자열에서의 포인터 : %zd\n", arr, chas[i], arr, pt);
-    }
-    else {
-      printf("주어진 문자열 : %s, 대상 문자 : %c, 주어진 문자열의 첫 원소의 주소 : %zd, 주어진 문자열에 대상문자가 존재하지 않습니다\n", arr, chas[i], arr);
-    }
+    printf("---------------------------------------------\n");
+    printf("주어진 문자 : %c\n", chas[i]);
+    if (pt = c_find(arr, chas[i]))
+      printf("%c의 주어진 문자열에서의 포인터 : %p\n", chas[i], pt);
+    else 
+      printf("주어진 문자열에 %c가 존재하지 않습니다\n", chas[i]);
   }
+
 
   return 0;
 }
 
-char* sol5(char* arr, char find) {
-  char* result = NULL;
-  int i;
+char* c_find(char* arr, char find) {
+  char* result = (void*)0;
+  int i = 0;
 
   for (i = 0; i < strlen(arr); i++) {
     if (arr[i] == find) {

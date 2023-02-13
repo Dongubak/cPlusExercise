@@ -1,40 +1,36 @@
-//#include <stdio.h>
-//#include <string.h>
-//
-//void sol2(char* pt, int n);
-//
-//int main(void) {
-//
-//	int input_number;
-//
-//	printf("n값을 입력하시오 : ");
-//	scanf("%d", &input_number);
-//
-//	char pt[input_number + 1];
-//	printf("n개의 문자를 입력하시오");
-//	sol2(pt, input_number + 1);
-//
-//	printf("%s", pt);
-//
-//
-//	return 0;
-//}
-//
-//void sol2(char* pt, int n) {
-//	while (getchar() != '\n') {
-//		continue;
-//	}
-//	int iter;
-//	for (iter = 0; iter < n; iter++) {
-//		char tmp;
-//		tmp = getchar();
-//		if (isspace(tmp)) {
-//			*(pt + iter) = '\0';
-//			break;
-//		}
-//		*(pt + iter) = tmp;
-//		if (iter == n - 1) {
-//			*(pt + iter) = '\0';
-//		}
-//	}
-//}
+#include <stdio.h>
+#include <ctype.h>
+#include "custom.h"
+
+void s_gets_a(char* st, int n);
+
+int main(void) {
+
+	int input_number = 0;
+
+	printf("enter N : ");
+	scanf("%d", &input_number);
+
+	clear_buf();
+
+	char* arr = (char*)malloc(sizeof(char) * input_number);
+
+	s_gets_a(arr, input_number);
+
+	free(arr);
+
+	return 0;
+}
+
+void s_gets_a(char* st, int n) {
+
+	int i = 0;
+	char tmp = 0;
+
+	while (i < n && (tmp = getchar()) != EOF && !isspace(tmp)) {
+		st[i] = tmp;
+		i++;
+	}
+
+	clear_buf();
+}

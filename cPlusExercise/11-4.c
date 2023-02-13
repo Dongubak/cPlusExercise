@@ -1,37 +1,51 @@
 #include <stdio.h>
 #include <ctype.h>
+#include "custom.h"
 
-void sol4(char* pt);
+void s_gets_a(char* st);
+char* s_gets_b(void);
 
-int main11_4(void) {
+int main(void) {
 
-  char words[10];
+  char *words = s_gets_b();
 
-  sol4(words, 10);
-
-  printf("%s", words);
+  free(words);
 
   return 0;
 }
 
-void sol4(char* pt) {
+char *s_gets_b(void) {
 
-  char tmp1, tmp2;
+  char buf[1024], tmp1, tmp2;
 
   while (isspace(tmp1 = getchar()) || isspace(tmp2 = getchar())) {
     continue;
   }
-  fgets(pt + 2, 7, stdin);
-  *(pt) = tmp1;
-  *(pt + 1) = tmp2;
-  while (!isspace(*(pt++))) {
-    continue;
+  buf[0] = tmp1;
+  buf[1] = tmp2;
+
+  s_gets_a(buf + 2);
+
+  size_t buf_len = strlen(buf) + 1;
+
+  char* words = (char*)malloc(sizeof(char) * buf_len);
+  for (int i = 0; i < buf_len; i++) {
+    words[i] = buf[i];
   }
-  *(--pt) = '\0';
 
+  return words;
+}
 
-  while (getchar() != '\n') {
-    continue;
+void s_gets_a(char* st) {
+
+  int i = 0;
+  char tmp = 0;
+
+  while ((tmp = getchar()) != EOF && !isspace(tmp)) {
+    st[i] = tmp;
+    i++;
   }
+  st[i] = '\0';
 
+  clear_buf();
 }

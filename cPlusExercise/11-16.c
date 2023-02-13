@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-int main11_16(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
 
   //argv[1]
   char tmp[10];

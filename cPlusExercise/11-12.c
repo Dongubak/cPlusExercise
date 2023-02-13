@@ -1,29 +1,39 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-int main11_12(void) {
-  char tmp[10];
-  int words_count = 0, upper_count = 0, lower_count = 0, punct_count = 0, number_count = 0;
 
-  while (fgets(tmp, 10, stdin)) {
-    int i;
-    for (i = 0; i < strlen(tmp); i++) {
-      if (isdigit(tmp[i])) {
-        number_count += 1;
-      }
-      else if (isupper(tmp[i])) {
-        upper_count += 1;
-      }
-      else if (ispunct(tmp[i])) {
-        punct_count += 1;
-      }
-      else if (islower(tmp[i])) {
-        lower_count += 1;
-      }
-    }
-  }
-  printf("단어 개수 : , 소문자 개수 : %d, 대문자 개수 : %d, 구두점의 개수 : %d, 숫자의 개수 : %d\n", lower_count, upper_count, punct_count, number_count);
+int c_count(char *string, int *count_arr);
 
+int main(void) {
+
+  int buf[128];
+  int w_u_l_p[4] = { 0 }; ///words, uppers, lowers, puncts
+
+  while (fgets(buf, 128, stdin) && buf[0] != EOF)
+    c_count(buf, w_u_l_p);
+
+  printf("words : %d, uppers : %d, lowers : %d, punct : %d", w_u_l_p[0], w_u_l_p[1], w_u_l_p[2], w_u_l_p[3]);
 
   return 0;
+}
+
+int c_count(char *string, int* count_arr) {
+
+  size_t str_len = strlen(string);
+
+  for (int i = 0; i < str_len; i++) {
+
+    if (isupper(string[i]))
+      count_arr[1] += 1;
+
+    else if (islower(string[i]))
+      count_arr[2] += 1;
+
+    else if (ispunct(string[i]))
+      count_arr[3] += 1;
+
+    else if (isspace(string[i]))
+      count_arr[0] += 1;
+
+  }
 }

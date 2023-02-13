@@ -1,50 +1,31 @@
 #include <stdio.h>
 #include <string.h>
 #pragma warning(disable: 4996)
-#define LIM 10
 
-char* mystrncpy(char* target, char* copied, int n);
+char* my_strncpy(char* destination, const char* source, int count);
 
-int main11_7(void) {
+int main(void) {
 
-  char arr[LIM];
-  char *test[3] = { "BBB", "CCCCCCCCCC", "DDDDDDDDDDDD" };
-  int i;
-  
-  for (i = 0; i < 3; i++) {
-    strcpy(arr, "AAA"); ///initialize target
-    mystrncpy(arr, test[i], strlen(test[i]));
-    printf("mystrncopy 함수 적용 : %s\n", arr);
-  }
+  char destination[10];
+  const char *source = "solitary";
+
+  my_strncpy(destination, source, 12);
+
+  printf("%s", destination);
 
   return 0;
 }
 
-char* mystrncpy(char* target, char* copied, int n) {
-  int i;
-  /*target크기인 경우(n < target or (n >= target && target > copied))
-    copied의 크기인 경우(n >= target || copied >= target)*/
+char* my_strncpy(char* destination, const char* source, int count) {
 
-  if (n < LIM || (n >= LIM && LIM > strlen(copied))) {
-    for (i = 0; i < LIM; i++) {
-      if (n < LIM && i > n - 1) {
-        target[i] = '\0';
-      }
-      else if (i > strlen(copied) - 1){
-        target[i] = '\0';
-      }
-      else {
-        target[i] = copied[i];
-      }
-    }
+  size_t source_len = strlen(source) + 1;
+  int i = 0;
 
-  }
-  else {
-    for (i = 0; i < strlen(copied); i++) {
-      target[i] = copied[i];
-    }
-    target[strlen(copied)] = '\0';
+  while ((source_len > count) ? i < count : i < source_len) {
+    destination[i] = source[i];
+    i++;
   }
 
-  return target;
+  destination[i] = '\0';
+  return destination;
 }

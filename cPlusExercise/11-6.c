@@ -1,33 +1,38 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdbool.h>
 
-bool is_within(char input_char, char* pt_string);
+bool is_within(char *string, char find);
 
-int main11_6(void) {
-  char arr[] = "Hold on, there will be better days";
+int main(void) {
+
+  char *string = "Hold on, there will be better days";
+  printf("대상 문자열 : %s\n", string);
+
   char chas[] = { 'a', 'b', 'c', 'd', 'e' };
-  int i;
+  int i = 0;
 
   for (i = 0; i < 5; i++) {
-    if (is_within(chas[i], arr)) {
-      printf("대상 문자열 %s에 %c가 존재합니다\n", arr, chas[i]);
-    }
-    else {
-      printf("대상 문자열 %s에 %c가 존재하지 않습니다\n", arr, chas[i]);
-    }
+    printf("----------------------------\n");
+
+    if (is_within(string, chas[i]))
+      printf("%c가 존재합니다\n", chas[i]);
+
+    else 
+      printf("%c가 존재하지 않습니다\n", chas[i]);
+    
   }
 
   return 0;
 }
 
-bool is_within(char input_char, char* pt_string) {
+bool is_within(char *string, char find) {
   bool result = false;
   int i;
 
-  for (i = 0; i < strlen(pt_string); i++) {
-    if (*(pt_string + i) == input_char) {
+  for (i = 0; i < strlen(string); i++) {
+    if (string[i] == find)
       return true;
-    }
   }
   return false;
 }

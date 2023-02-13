@@ -1,31 +1,30 @@
 #include <stdio.h>
 #include <string.h>
 
-char* sol9(char* arr);
+char* s_reverse(char* string);
 
-int main11_9(void) {
+int main(void) {
 
-  char arr[3][10] = { "korean", "japan", "china" };
+  char strings[3][10] = {"korea", "japan", "china"};
   int i;
 
   for (i = 0; i < 3; i++) {
-    sol9(arr[i]);
-    printf("%s\n", arr[i]);
+    printf("%s\n", s_reverse(strings[i]));
   }
 
   return 0;
 }
 
-char* sol9(char* arr) {
-  int i = 0;
-  int j = strlen(arr);
-  while (i <= (int)(strlen(arr) / 2)) {
-    char tmp;
-    tmp = arr[strlen(arr) - i - 1];
-    arr[strlen(arr) - i - 1] = arr[i];
-    arr[i] = tmp;
-    i++;
-  }
+char* s_reverse(char* string) {
+  int left_i = 0;
+  size_t right_i = strlen(string) - 1;///nullÀº strlen(string)
+  
+  do {
+    char tmp = string[left_i];
+    string[left_i] = string[right_i];
+    string[right_i] = tmp;
 
-  return arr;
+  } while (++left_i < --right_i);
+
+  return string;
 }

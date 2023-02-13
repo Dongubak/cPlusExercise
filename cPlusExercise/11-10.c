@@ -2,32 +2,49 @@
 #include <string.h>
 #include <ctype.h>
 
-char* sol10(char* arr);
+char* s_gets_a(char* st, int n);
+char* wipe_s(char* string);
 
-int main11_10(void) {
+int main(void) {
+  
   char tmp[10];
-  while (fgets(tmp, 10, stdin) && tmp[0] != '\n') {
-    sol10(tmp);
-    printf("%s", tmp);
-    int i;
-    for (i = 0; i < 10; i++) {
-      tmp[i] = '\0';
-    }
+  while (s_gets_a(tmp, 10) != EOF) {
+    printf("%s", wipe_s(tmp));
   }
 
   return 0;
 }
 
-char* sol10(char* arr) {
-  int i, j;
-  int len = strlen(arr) + 1;
-  for (i = 0; i < len - 2; i++) {
-    for (j = i + 1; j < len - 1; j++) {
-      if ((isspace(arr[i]) || arr[i] == '\0') && !isspace(arr[j])) {
-        arr[i] = arr[j];
-        arr[j] = '\0';
-      }
+char* s_gets_a(char* st, int n) {
+  char* ret_val;
+  int i = 0;
+
+  ret_val = fgets(st, n, stdin);
+  if (st[0] == '\n') {
+    return EOF;
+  }
+
+  if (ret_val) {
+    while (st[i] != '\n' && st[i] != '\0')
+      i++;
+    if (st[i] == '\n')
+      st[i] = '\0';
+  }
+
+  return ret_val;
+}
+
+char* wipe_s(char* string) {
+  int i = 0;
+  size_t right_i = strlen(string);
+
+  for (int j = 0; j < right_i; j++) {
+    if (!isspace(string[j])) {
+      string[i++] = string[j];
     }
   }
-  return arr;
+
+  string[i] = '\0';
+  
+  return string;
 }
